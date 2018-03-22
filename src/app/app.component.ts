@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  // API Key: AIzaSyBxGnabLzD3YRZK4KbUvDkJXeGgmvYUltg
 }

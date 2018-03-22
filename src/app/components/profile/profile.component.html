@@ -1,0 +1,26 @@
+
+<div *ngIf="user">
+  <h2 class="page-header">{{ user.f_name }} {{ user.l_name }}</h2>
+  <ul class="list-group">
+    <li class="list-group-item">Name: {{ user.f_name }}</li>
+    <li class="list-group-item">Email: {{ user.email }}</li>
+  </ul>
+	<br>
+  <a [routerLink]="['/organisation/add']">Create an organisation</a>
+</div>
+
+<br>
+<br>
+
+<h4 class="page-header">My Requests</h4>
+<div class="container">
+	<app-cardbyuser></app-cardbyuser>
+</div>
+
+
+<h4 class="page-header">Delete Your Account</h4>
+<p>Please be sure you want to delete your account and all associated requests before you press this button.</p>
+<button (click)="onDelete()" class="btn btn-primary">Delete</button>
+
+
+<router-outlet></router-outlet>

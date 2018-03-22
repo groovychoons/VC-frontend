@@ -1,0 +1,35 @@
+
+<a [routerLink]="['/explore']">← Explore</a>
+
+<hr>
+
+<div class="container">
+    <div class="colum_left">
+        <div class="description">
+            <h1 md-line>{{ request.title }}</h1>
+             Posted by: {{ user.f_name }} {{ user.l_name }}
+             <br>
+            {{ request.description }}
+        </div>
+    </div>
+    <br>
+    <div class="colum_right">
+        <div class="info">
+             <h4 md-line> Request for: {{ request.request_for }}</h4>
+		</div>
+
+        <div class="updates">
+            Location: {{ request.location }}
+            <br>
+            Expertise: {{ request.expertise }}
+            <br>
+            Urgency: {{ request.urgency }}
+        </div>
+        <br>
+        <div class="updates">
+            <button (click)="onDelete()" class="btn btn-primary">Delete</button>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

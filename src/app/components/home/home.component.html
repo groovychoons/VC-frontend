@@ -1,0 +1,29 @@
+
+<!--
+  <app-slider *ngIf="!authService.loggedIn()"></app-slider>
+
+<div class="jumbotron text-center">
+  <h1>VolunteerConnect</h1>
+  <p class="lead">Welcome to my site!</p>
+  <div>
+    <a class="btn btn-primary" [routerLink]="['/register']">Register</a>
+    <a class="btn btn-default" [routerLink]="['/login']">Login</a>
+  </div>
+</div>
+-->
+<div class="row">
+  <div class="col-md-4">
+    <h3>Post Requests</h3>
+    <p>Let others know what you need and where you need it by posting a request for goods or services</p>
+  </div>
+  <div class="col-md-4">
+    <h3>News</h3>
+    <p>We'll bring you the latest stories, blog posts and updates related to the refugee crisis</p>
+  </div>
+  <div class="col-md-4">
+    <h3>Places and People</h3>
+    <p>Search our site for profiles on organisations or places to help you get a better picture</p>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,28 @@
+
+<a [routerLink]="['/explore']">← Explore</a>
+
+<hr>
+
+<div class="container">
+    <div class="colum_left">
+        <div class="description">
+            <h1 md-line>Organisation: {{ request.name }}</h1>
+             Group Admin: {{ request.admin_names }}
+             <br>
+            {{ request.description }}
+        </div>
+    </div>
+    <br>
+    <div class="colum_right">
+
+        <div class="updates">
+            Website: {{ request.website }}
+            <br>
+            Twitter: {{ request.twitter }}
+            <br>
+            Facebook: {{ request.facebook }}
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

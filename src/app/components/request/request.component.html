@@ -1,0 +1,36 @@
+
+<h2 class="page-header">Add a Request</h2>
+<form (submit)="onRequestSubmit()">
+  <div class="form-group">
+    <label>Title</label>
+    <input type="text" [(ngModel)]="title" name="title" class="form-control" >
+  </div>
+  <div class="form-group">
+    <label>Request For</label>
+    <input type="text" [(ngModel)]="request_for" name="request_for" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <input type="text" [(ngModel)]="description" name="description" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>Location</label>
+    <app-search-map></app-search-map>
+  </div>
+
+  <div class="form-group">
+    <label>Urgency</label>
+    <select [(ngModel)]="urgency" name="urgency" class="form-control">
+      <option *ngFor="let p of urgencies" [ngValue]="p.name">{{p.name}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Skills, Interests or Expertise Needed</label>
+    <select [(ngModel)]="expertise" name="expertise" class="form-control">
+      <option *ngFor="let q of skills" [ngValue]="q.name">{{q.name}}</option>
+    </select>  
+  </div>
+
+  <input type="submit" class="btn btn-primary" value="Submit">
+</form>

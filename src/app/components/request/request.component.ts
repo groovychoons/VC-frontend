@@ -3,6 +3,9 @@ import { RequestService } from '../../services/request.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
 import { SearchMapComponent } from '../search-map/search-map.component';
+import { AuthService } from '../../services/auth.service';
+import { User } from '../../models/user';
+import { TeamService } from '../../services/team.service'
 
 @Component({
   selector: 'app-request',
@@ -11,6 +14,11 @@ import { SearchMapComponent } from '../search-map/search-map.component';
 })
 
 export class RequestComponent implements OnInit {
+  
+  user: User;
+  userName: String;
+  userId: String;
+  orgs: any;
 
   @ViewChild(SearchMapComponent) mapsearch;
 
@@ -23,14 +31,48 @@ export class RequestComponent implements OnInit {
   description: String;
   urgency: String;
   expertise: String;
+  authorOptions: any[];
+  authorId: String;
+
+  selectedAuthor: any;
 
   constructor(
     private flashMessage:FlashMessagesService,
     private requestService:RequestService,
-    private router: Router
+    private router: Router,
+    private authService:AuthService,
+    private teamService:TeamService
   ) { }
 
   ngOnInit() {
+    this.authService.getProfile().subscribe(profile => {
+      this.user = profile;
+      this.userName = this.user.f_name + " " + this.user.l_name;
+      this.userId = this.user._id;
+      this.authorOptions = [
+        {id: this.userId, name: this.userName}
+      ];
+      this.selectedAuthor = this.authorOptions[0];
+    },
+    err => {
+      console.log(err);
+      return false;
+    });
+
+    this.teamService.viewTeamsByUser().subscribe(result => {
+      this.orgs = result;
+      for (let org of this.orgs){
+        this.authorOptions.push(org);
+      }
+      for (let org of this.authorOptions){
+        console.log(org);
+      }
+    },
+    err => {
+      console.log(err);
+      return false;
+    });
+
   }
     
 
@@ -43,7 +85,9 @@ export class RequestComponent implements OnInit {
     latitude: this.mapsearch.latitude,
     longitude: this.mapsearch.longitude,
 	  urgency: this.urgency,
-	  expertise: this.expertise
+	  expertise: this.expertise,
+    author_id: this.selectedAuthor.id,
+    author: this.selectedAuthor.name
     }
 
     // Add request
@@ -56,6 +100,17 @@ export class RequestComponent implements OnInit {
       }
     });
   }
+  
+
+
+
+  onChange(deviceValue) {
+    console.log(this.selectedAuthor);
+    this.selectedAuthor = deviceValue;
+     console.log(this.selectedAuthor.id + this.selectedAuthor.name);
+   
+
+  }
 
   urgencies = [
     {name: ""},
@@ -65,7 +120,7 @@ export class RequestComponent implements OnInit {
   ];
 
   skills = [
-    {name: ""},
+    {name: "", image: "test"},
     {name: "Admin / Coordination"},
     {name: "Arts, Sports and Music"},
     {name: "Construction"},

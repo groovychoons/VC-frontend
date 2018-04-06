@@ -34,9 +34,7 @@ export class ViewRequestComponent implements OnInit {
   getRequest(id): void {
   	this.requestService.viewRequest(id).subscribe(result => {
   	  this.request = result.request;
-      this.user = result.user;
       console.log(this.request);
-
   	},
   	err => {
       console.log(err);

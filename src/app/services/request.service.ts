@@ -58,4 +58,12 @@ export class RequestService {
       .map(res => res.json().data);
   }
 
+   viewRequestsByTeam(teamid){
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.get(`requests/getbyteam/${teamid}`, {headers: headers})
+      .map(res => res.json().data);
+  }
+
+
 }

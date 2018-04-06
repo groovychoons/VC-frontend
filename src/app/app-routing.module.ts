@@ -12,14 +12,15 @@ import { ViewRequestComponent } from './components/view-request/view-request.com
 import { ExploreComponent } from './components/explore/explore.component';
 import { CreateOrgComponent } from './components/create-org/create-org.component';
 import { ViewOrgComponent } from './components/view-org/view-org.component';
-
+import { ExploreOrgComponent } from './components/explore-org/explore-org.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
-  {path: 'explore', component: ExploreComponent, canActivate:[AuthGuard]},
+  {path: 'explore', component: ExploreComponent},
+  {path: 'organisations', component: ExploreOrgComponent},
   {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard]},
   {path: 'request', component: RequestComponent, canActivate:[AuthGuard]},
   {path: 'request/:id', component: ViewRequestComponent},

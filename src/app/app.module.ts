@@ -30,6 +30,9 @@ import { ExploreComponent } from './components/explore/explore.component';
 import { CardbyuserComponent } from './components/cardbyuser/cardbyuser.component';
 import { CreateOrgComponent } from './components/create-org/create-org.component';
 import { ViewOrgComponent } from './components/view-org/view-org.component';
+import { ExploreOrgComponent } from './components/explore-org/explore-org.component';
+import { CardOrgComponent } from './components/card-org/card-org.component';
+import { CardByTeamComponent } from './components/card-by-team/card-by-team.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,10 @@ import { ViewOrgComponent } from './components/view-org/view-org.component';
     ExploreComponent,
     CardbyuserComponent,
     CreateOrgComponent,
-    ViewOrgComponent
+    ViewOrgComponent,
+    ExploreOrgComponent,
+    CardOrgComponent,
+    CardByTeamComponent
   ],
   imports: [
     BrowserModule,

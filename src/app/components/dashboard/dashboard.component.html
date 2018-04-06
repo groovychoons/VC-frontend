@@ -1,28 +1,43 @@
 
-<h2 class="page-header">Dashboard</h2>
-<p>Welcome to your dashboard</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+		<a [routerLink]="['/explore']"><img class="explore-options" src="../assets/dashboard-requests.jpg" alt="Latest Requests"></a>
+    </div>
+    <div class="col-sm">
+		<a [routerLink]="['/places']"><img class="explore-options" src="../assets/dashboard-places.jpg" alt="Explore Places"></a>
+    </div>
+    <div class="col-sm">
+		<a [routerLink]="['/organisations']"><img class="explore-options" src="../assets/dashboard-organisations.jpg" alt="Explore Organisations"></a>
+    </div>
+  </div>
+</div>
+
 <hr>
 
-<a [routerLink]="['/request']">Post a Request</a>
+<div class="row">
 
+  <div class="column left">
+    <h2>Requests for your skills</h2>
+      <br>
+      Put this section in.
+      <br>
 
-<p>To add:
-<br>
-- News / updates
-<br>
-- Latest requests
-<br>
-- Places, organisations, people links
-<br>
-- Links to blogs / info pages
-<br>
-etc.!!!</p>
+    <br>
 
+    <p>To add:
+    <br>- News / updates
+    <br>- Latest requests
+    <br>- Links to blogs / info pages
+    <br>etc.!!!</p>
 
+    <p>Important Links</p>
+    <a [routerLink]="['/request']">Post a Request</a>
 
-<p>Test orgs:
-	<br>
-	5aafb1b08161865f94bcabb6
-	<br>
-	5aafc16be5cb356815d8b320
-</p>
+  </div>
+
+  <div class="column right">
+    test
+  </div>
+
+</div>

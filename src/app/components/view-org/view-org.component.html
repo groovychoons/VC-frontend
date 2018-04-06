@@ -1,28 +1,34 @@
 
-<a [routerLink]="['/explore']">← Explore</a>
+<a [routerLink]="['/organisations']">← Organisation List</a>
 
 <hr>
 
 <div class="container">
-    <div class="colum_left">
+<div class="row">
+    <div class="col-9">
         <div class="description">
             <h1 md-line>Organisation: {{ request.name }}</h1>
              Group Admin: {{ request.admin_names }}
              <br>
             {{ request.description }}
         </div>
-    </div>
-    <br>
-    <div class="colum_right">
 
-        <div class="updates">
-            Website: {{ request.website }}
-            <br>
-            Twitter: {{ request.twitter }}
-            <br>
-            Facebook: {{ request.facebook }}
-        </div>
+    <br>
+
+    <div class="updates">
+        Website: {{ request.website }}
+        <br>
+        Twitter: {{ request.twitter }}
+        <br>
+        Facebook: {{ request.facebook }}
     </div>
+    </div>
+    <div class="col-3">
+        <app-card-by-team></app-card-by-team>
+    </div>
+
 </div>
+</div>
+
 
 <router-outlet></router-outlet>

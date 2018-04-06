@@ -1,0 +1,24 @@
+@media (min-width: 576px) {
+    .card-columns {
+        column-count: 1;
+    }
+}
+
+@media (min-width: 608px) {
+    .card-columns {
+        column-count: 1;
+    }
+}
+
+.card-columns {
+    margin: 20px !important;
+    float: left;
+}
+
+.card-img-top {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+    padding: 5px;
+}

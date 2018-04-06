@@ -40,5 +40,12 @@ export class TeamService {
       .map(res => res.json().data);
   }
 
+   viewTeamsByUser(){
+    this.user = localStorage.getItem('userId');
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.get(`teams/getbyuser/${this.user}`, {headers: headers})
+      .map(res => res.json().data);
+  }
 
 }

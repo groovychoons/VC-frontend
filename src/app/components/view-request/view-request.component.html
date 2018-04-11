@@ -7,7 +7,7 @@
     <div class="colum_left">
         <div class="description">
             <h1 md-line>{{ request.title }}</h1>
-             Posted by: {{ request.author }}
+             Posted by: <a [routerLink]="['/', request.author_type, request.author_id]">{{ request.author }}</a>
              <br>
             {{ request.description }}
         </div>
@@ -24,10 +24,6 @@
             Expertise: {{ request.expertise }}
             <br>
             Urgency: {{ request.urgency }}
-        </div>
-        <br>
-        <div class="updates">
-            <button (click)="onDelete()" class="btn btn-primary">Delete</button>
         </div>
     </div>
 </div>

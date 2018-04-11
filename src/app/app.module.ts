@@ -33,6 +33,8 @@ import { ViewOrgComponent } from './components/view-org/view-org.component';
 import { ExploreOrgComponent } from './components/explore-org/explore-org.component';
 import { CardOrgComponent } from './components/card-org/card-org.component';
 import { CardByTeamComponent } from './components/card-by-team/card-by-team.component';
+import { ViewUserComponent } from './components/view-user/view-user.component';
+import { ViewReqAsOwnerComponent } from './components/view-req-as-owner/view-req-as-owner.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { CardByTeamComponent } from './components/card-by-team/card-by-team.comp
     ViewOrgComponent,
     ExploreOrgComponent,
     CardOrgComponent,
-    CardByTeamComponent
+    CardByTeamComponent,
+    ViewUserComponent,
+    ViewReqAsOwnerComponent
   ],
   imports: [
     BrowserModule,

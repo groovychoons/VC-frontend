@@ -13,6 +13,8 @@ import { ExploreComponent } from './components/explore/explore.component';
 import { CreateOrgComponent } from './components/create-org/create-org.component';
 import { ViewOrgComponent } from './components/view-org/view-org.component';
 import { ExploreOrgComponent } from './components/explore-org/explore-org.component';
+import { ViewUserComponent } from './components/view-user/view-user.component';
+import { ViewReqAsOwnerComponent } from './components/view-req-as-owner/view-req-as-owner.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -24,9 +26,11 @@ const routes: Routes = [
   {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard]},
   {path: 'request', component: RequestComponent, canActivate:[AuthGuard]},
   {path: 'request/:id', component: ViewRequestComponent},
+  {path: 'request/admin/:id', component: ViewReqAsOwnerComponent, canActivate:[AuthGuard]},
   {path: 'organisation/add', component: CreateOrgComponent, canActivate:[AuthGuard]},
   {path: 'organisation/:id', component: ViewOrgComponent},
-  {path: '**', redirectTo: ''}
+  {path: 'user/:id', component: ViewUserComponent},
+  {path: '**', redirectTo: ''},
 ];
 
 @NgModule({

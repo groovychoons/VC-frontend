@@ -4,16 +4,18 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 import { RequestService } from '../../services/request.service'
 
 @Component({
-  selector: 'app-view-request',
-  templateUrl: './view-request.component.html',
-  styleUrls: ['./view-request.component.css']
+  selector: 'app-view-req-as-owner',
+  templateUrl: './view-req-as-owner.component.html',
+  styleUrls: ['./view-req-as-owner.component.css']
 })
-export class ViewRequestComponent implements OnInit {
-
+export class ViewReqAsOwnerComponent implements OnInit {
   request: Object;
   user: Object;
   private sub: any;
   id: string;
+  pageMode : string;
+
+  requestPrior: Object;
 
   constructor(
     private requestService:RequestService,
@@ -23,16 +25,21 @@ export class ViewRequestComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.pageMode = "viewMode";
+
     this.sub = this.route.params.subscribe(params => {
        this.id = params['id']; 
     });
     console.log(this.id);
     this.getRequest(this.id);
+
+    this.requestPrior = new Object();
   }
 
   getRequest(id): void {
   	this.requestService.viewRequest(id).subscribe(result => {
   	  this.request = result.request;
+      this.requestPrior = result.request;
       console.log(this.request);
   	},
   	err => {
@@ -53,5 +60,26 @@ export class ViewRequestComponent implements OnInit {
     });
   }
 
+  
+  editRequest() : void {
+    Object.assign(this.requestPrior, this.request);
+    this.pageMode = "editMode";
+  }
+  
+  saveRequest() : void {
+//    if (requestForm.checkValidity()) {
+    this.requestPrior = new Object();
+
+  //    this.pageMode = "viewMode";
+    //}
+  }
+  
+  cancelEdit() : void {
+    Object.assign(this.request, this.requestPrior);
+        this.requestPrior = new Object();
+
+    this.pageMode = "viewMode";
+    
+  }
 
 }

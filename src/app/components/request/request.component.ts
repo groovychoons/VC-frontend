@@ -50,7 +50,7 @@ export class RequestComponent implements OnInit {
       this.userName = this.user.f_name + " " + this.user.l_name;
       this.userId = this.user._id;
       this.authorOptions = [
-        {id: this.userId, name: this.userName}
+        {id: this.userId, name: this.userName, type: "user"}
       ];
       this.selectedAuthor = this.authorOptions[0];
     },
@@ -62,7 +62,7 @@ export class RequestComponent implements OnInit {
     this.teamService.viewTeamsByUser().subscribe(result => {
       this.orgs = result;
       for (let org of this.orgs){
-        this.authorOptions.push(org);
+        this.authorOptions.push({id: org.id, name: org.name, type: "organisation"});
       }
       for (let org of this.authorOptions){
         console.log(org);
@@ -87,7 +87,8 @@ export class RequestComponent implements OnInit {
 	  urgency: this.urgency,
 	  expertise: this.expertise,
     author_id: this.selectedAuthor.id,
-    author: this.selectedAuthor.name
+    author: this.selectedAuthor.name,
+    author_type: this.selectedAuthor.type
     }
 
     // Add request
@@ -100,16 +101,11 @@ export class RequestComponent implements OnInit {
       }
     });
   }
-  
-
-
 
   onChange(deviceValue) {
     console.log(this.selectedAuthor);
     this.selectedAuthor = deviceValue;
      console.log(this.selectedAuthor.id + this.selectedAuthor.name);
-   
-
   }
 
   urgencies = [

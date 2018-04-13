@@ -7,6 +7,14 @@ form input.editMode {
   display:auto;
 }
 
+form textarea.viewMode {
+  display: none;
+}
+
+form textarea.editMode {
+  display:auto;
+}
+
 form select.viewMode {
   display:none;
 }

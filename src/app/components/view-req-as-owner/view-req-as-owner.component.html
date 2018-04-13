@@ -3,23 +3,32 @@
 
 <hr>
 
+
+<button class="btn btn-secondary viewButton" [ngClass]="pageMode" (click)="editRequest()">Edit</button>
+<button class="btn btn-secondary editButton" [ngClass]="pageMode" (click)="cancelEdit()">Cancel</button>
+
+
+<button (click)="onDelete()" class="btn btn-danger">Delete</button>
+
+<br><br>
+
 <div class="container">
-        <div class="updates">
-            <button (click)="onDelete()" class="btn btn-danger">Delete</button>
-        </div>
-    <div class="colum_left">
-        <div class="description">
-            <h1 md-line>{{ request.title }}</h1>
-             Posted by: <a [routerLink]="['/', request.author_type, request.author_id]">{{ request.author }}</a>
-             <br>
-            {{ request.description }}
-        </div>
-    </div>
+  
+    <form id="requestForm" name="requestForm"  method="post" novalidate (ngSubmit)="saveRequest()" #requestForm="ngForm">
+      	<h1>
+          <input type="text" class="form-control" id="title" name="title"  [ngClass]="pageMode" [(ngModel)]="request.title" required #title="ngModel"/>
+          <span class="displayValue" [ngClass]="pageMode">{{ request.title }}</span>
+      	</h1>
+        
+        Posted by: <a [routerLink]="['/', request.author_type, request.author_id]">{{ request.author }}</a>
+        <br><br>   
+    	<p>
+            <textarea type="text" class="form-control" id="description" name="description"  [ngClass]="pageMode" [(ngModel)]="request.description" required #title="ngModel"></textarea>
+            <span class="displayValue" [ngClass]="pageMode">{{ request.description }}</span>
+        </p>
     <br>
-    <div class="colum_right">
-        <div class="info">
-             <h4 md-line> Request for: {{ request.request_for }}</h4>
-		</div>
+
+        <h4 md-line> Request for: {{ request.request_for }}</h4>
 
         <div class="updates">
             Location: {{ request.location }}
@@ -30,27 +39,11 @@
         </div>
         <br>
 
-    </div>
-</div>
+        <button type="submit" class="btn btn-primary editButton" [ngClass]="pageMode" form="requestForm"  [disabled]="requestForm.invalid">Save</button>
 
-
-<br> <br>
-<div class="container">
-  
-    <form id="requestForm" name="requestForm"  method="post" novalidate (ngSubmit)="saveRequest()" #requestForm="ngForm">
-      <h1>
-          <input type="text" id="title" name="title"  [ngClass]="pageMode" [(ngModel)]="request.title" required #title="ngModel"/>
-          <span class="displayValue" [ngClass]="pageMode">{{ request.title }}</span>
-
-      </h1>
-
-      
-        <button type="submit" class="editButton" [ngClass]="pageMode" form="requestForm"  [disabled]="requestForm.invalid">Save</button>
-  <button class="btn btn-primary editButton" [ngClass]="pageMode" (click)="cancelEdit()">Cancel</button>
-     
   </form> 
   
-  <button class="btn btn-secondary viewButton" [ngClass]="pageMode" (click)="editRequest()">Edit</button>
-  
 </div>
+
+
 <router-outlet></router-outlet>

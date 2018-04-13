@@ -21,6 +21,8 @@ import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
 import { RequestService } from './services/request.service';
 import { TeamService } from './services/team.service';
+import { TwitterService } from './services/twitter.service';
+
 
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { AuthGuard } from './guards/auth.guard';
@@ -78,7 +80,8 @@ import { ViewReqAsOwnerComponent } from './components/view-req-as-owner/view-req
     AuthService,
     RequestService,
     TeamService,
-    AuthGuard
+    AuthGuard,
+    TwitterService
   ],
   bootstrap: [AppComponent]
 })

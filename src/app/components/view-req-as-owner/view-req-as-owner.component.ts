@@ -67,11 +67,8 @@ export class ViewReqAsOwnerComponent implements OnInit {
   }
   
   saveRequest() : void {
-//    if (requestForm.checkValidity()) {
     this.requestPrior = new Object();
-
-  //    this.pageMode = "viewMode";
-    //}
+    this.pageMode = "viewMode";
   }
   
   cancelEdit() : void {

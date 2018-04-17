@@ -1,0 +1,28 @@
+
+<a [routerLink]="['/places']">← Places List</a>
+
+<hr>
+
+<div class="container">
+<div class="row">
+    <div class="col-6">
+        <h1 md-line>Place: {{ request.name }}</h1>
+        {{ request.description }}
+
+    <br>
+
+    </div>
+    <div class="col-6">
+        <app-map></app-map>
+
+    </div>
+</div>
+</div>
+
+<hr>
+
+<h1>Feedback</h1>
+
+<app-feedback [page_id]="id" [page_name]="request.name" [page_type]="page_type"></app-feedback>
+
+<router-outlet></router-outlet>

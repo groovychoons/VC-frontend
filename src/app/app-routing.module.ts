@@ -15,6 +15,9 @@ import { ViewOrgComponent } from './components/view-org/view-org.component';
 import { ExploreOrgComponent } from './components/explore-org/explore-org.component';
 import { ViewUserComponent } from './components/view-user/view-user.component';
 import { ViewReqAsOwnerComponent } from './components/view-req-as-owner/view-req-as-owner.component';
+import { CreatePlaceComponent } from './components/create-place/create-place.component';
+import { ViewPlaceComponent } from './components/view-place/view-place.component';
+import { ExplorePlacesComponent } from './components/explore-places/explore-places.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -29,6 +32,9 @@ const routes: Routes = [
   {path: 'request/admin/:id', component: ViewReqAsOwnerComponent, canActivate:[AuthGuard]},
   {path: 'organisation/add', component: CreateOrgComponent, canActivate:[AuthGuard]},
   {path: 'organisation/:id', component: ViewOrgComponent},
+  {path: 'place/add', component: CreatePlaceComponent, canActivate:[AuthGuard]},
+  {path: 'places', component: ExplorePlacesComponent},
+  {path: 'place/:id', component: ViewPlaceComponent},
   {path: 'user/:id', component: ViewUserComponent},
   {path: '**', redirectTo: ''},
 ];

@@ -21,6 +21,8 @@ import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
 import { RequestService } from './services/request.service';
 import { TeamService } from './services/team.service';
+import { PlaceService } from './services/place.service';
+import { FeedbackService } from './services/feedback.service';
 import { TwitterService } from './services/twitter.service';
 
 
@@ -37,6 +39,11 @@ import { CardOrgComponent } from './components/card-org/card-org.component';
 import { CardByTeamComponent } from './components/card-by-team/card-by-team.component';
 import { ViewUserComponent } from './components/view-user/view-user.component';
 import { ViewReqAsOwnerComponent } from './components/view-req-as-owner/view-req-as-owner.component';
+import { ExplorePlacesComponent } from './components/explore-places/explore-places.component';
+import { CardPlaceComponent } from './components/card-place/card-place.component';
+import { CreatePlaceComponent } from './components/create-place/create-place.component';
+import { ViewPlaceComponent } from './components/view-place/view-place.component';
+import { FeedbackComponent } from './components/feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +68,12 @@ import { ViewReqAsOwnerComponent } from './components/view-req-as-owner/view-req
     CardOrgComponent,
     CardByTeamComponent,
     ViewUserComponent,
-    ViewReqAsOwnerComponent
+    ViewReqAsOwnerComponent,
+    ExplorePlacesComponent,
+    CardPlaceComponent,
+    CreatePlaceComponent,
+    ViewPlaceComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +93,9 @@ import { ViewReqAsOwnerComponent } from './components/view-req-as-owner/view-req
     RequestService,
     TeamService,
     AuthGuard,
-    TwitterService
+    TwitterService,
+    PlaceService,
+    FeedbackService
   ],
   bootstrap: [AppComponent]
 })

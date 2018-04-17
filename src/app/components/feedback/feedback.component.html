@@ -1,0 +1,32 @@
+
+<br>
+
+<div class="container" *ngFor="let feedback of comments">
+	<div class="card">
+	
+		<div class="card-body">
+			<p class="card-text comment">{{ feedback.comment }}</p>
+		</div>
+
+		<div class="card-footer text-muted d-flex justify-content-between">
+			Posted by: {{ feedback.user_name }} at {{ feedback.date_created | date:'short' }}
+			<button *ngIf="belongsToUser(feedback.user_id)" (click)="onFeedbackDelete(feedback.id)" type="button" class="btn btn-danger btn-sm">Delete</button>
+		</div>
+		
+	</div>
+	<br>
+</div>
+
+<br>
+
+<form *ngIf="authService.loggedIn()" (submit)="onFeedbackSubmit()">
+
+  <div class="form-group">
+    <textarea type="text" placeholder="Leave feedback about your experience." [(ngModel)]="comment" name="comment" class="form-control"></textarea>
+  </div>
+
+  <input type="submit" class="btn btn-primary" value="Submit">
+
+</form>
+
+<br>

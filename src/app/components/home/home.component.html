@@ -1,4 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+    <a [routerLink]="['/explore']"><img class="explore-options" src="../assets/dashboard-requests.jpg" alt="Latest Requests"></a>
+    </div>
+    <div class="col-sm">
+    <a [routerLink]="['/places']"><img class="explore-options" src="../assets/dashboard-places.jpg" alt="Explore Places"></a>
+    </div>
+    <div class="col-sm">
+    <a [routerLink]="['/organisations']"><img class="explore-options" src="../assets/dashboard-organisations.jpg" alt="Explore Organisations"></a>
+    </div>
+  </div>
+</div>
 
+<hr>
 <!--
   <app-slider *ngIf="!authService.loggedIn()"></app-slider>
 
@@ -26,4 +40,6 @@
   </div>
 </div>
 
+<h2>About us</h2>
+etc.
 <router-outlet></router-outlet>

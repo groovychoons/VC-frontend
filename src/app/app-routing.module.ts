@@ -36,7 +36,7 @@ const routes: Routes = [
   {path: 'places', component: ExplorePlacesComponent},
   {path: 'place/:id', component: ViewPlaceComponent},
   {path: 'user/:id', component: ViewUserComponent},
-  {path: '**', redirectTo: ''},
+ // {path: '**', redirectTo: ''},
 ];
 
 @NgModule({

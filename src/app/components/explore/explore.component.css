@@ -1,7 +1,29 @@
 
+.top {
+  display: flex;
+}
 
 .left-box {
+	flex: 1;
+	text-align: left;
+}
+
+.right-box {
+	flex: 1;
+	text-align: right;
+}
+
+.content-box {
 	margin: 0px;
 	padding: 0px;
 	display: inline-block;
+}
+
+.line {
+	margin-top: 0px;
+}
+
+.search-box {
+	float: right;
+	padding: 0px;
 }

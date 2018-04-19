@@ -1,0 +1,22 @@
+.top {
+  display: flex;
+}
+
+.left-box {
+	flex: 1;
+	text-align: left;
+}
+
+.right-box {
+	flex: 1;
+	text-align: right;
+}
+
+.line {
+	margin-top: 10px;
+}
+
+.search-box {
+	float: right;
+	padding: 0px;
+}

@@ -3,6 +3,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
+import { MomentModule } from 'ngx-moment';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +14,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { SliderComponent } from './components/slider/slider.component';
 import { RequestComponent } from './components/request/request.component';
 import { CardComponent } from './components/card/card.component';
 import { ViewRequestComponent } from './components/view-request/view-request.component';
@@ -24,6 +25,7 @@ import { TeamService } from './services/team.service';
 import { PlaceService } from './services/place.service';
 import { FeedbackService } from './services/feedback.service';
 import { TwitterService } from './services/twitter.service';
+import { AysBlogService } from './services/ays-blog.service';
 
 
 import { FlashMessagesModule } from 'angular2-flash-messages';
@@ -44,6 +46,11 @@ import { CardPlaceComponent } from './components/card-place/card-place.component
 import { CreatePlaceComponent } from './components/create-place/create-place.component';
 import { ViewPlaceComponent } from './components/view-place/view-place.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
+import { TweetsComponent } from './components/tweets/tweets.component';
+import { TweetComponent } from './components/tweet/tweet.component';
+import { TweetPipe } from './pipes/tweet.pipe';
+import { StripHtmlTagsPipe } from './pipes/strip-html-tags.pipe';
+import { CardNewsComponent } from './components/card-news/card-news.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +61,6 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     HomeComponent,
     DashboardComponent,
     ProfileComponent,
-    SliderComponent,
     RequestComponent,
     CardComponent,
     ViewRequestComponent,
@@ -73,7 +79,13 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     CardPlaceComponent,
     CreatePlaceComponent,
     ViewPlaceComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    TweetsComponent,
+    TweetComponent,
+    TweetPipe,
+    StripHtmlTagsPipe,
+    CardNewsComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -85,7 +97,9 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBxGnabLzD3YRZK4KbUvDkJXeGgmvYUltg',
       libraries: ["places"]
-    })
+    }),
+    MomentModule,
+    HttpClientModule
   ],
   providers: [
     ValidateService,
@@ -95,7 +109,9 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     AuthGuard,
     TwitterService,
     PlaceService,
-    FeedbackService
+    FeedbackService,
+    HttpClientModule,
+    AysBlogService
   ],
   bootstrap: [AppComponent]
 })

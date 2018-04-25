@@ -1,0 +1,15 @@
+
+<div class="card-block">
+  <div class="card-img" *ngIf="hasPhoto(tweet)">
+      <img [src]="tweet.entities?.media[0].media_url_https" (click)="media = true" />
+  </div>
+  <p class="card-text" [innerHTML]="tweet | tweet"></p>
+</div>
+<div class="card-footer" *ngIf="!retweet">
+    {{tweet.created_at | amTimeAgo}} 
+    {{tweet.created_at | date:'medium'}}
+</div>
+<div class="card-footer" *ngIf="retweet">
+    {{retweet.created_at | amTimeAgo}} 
+    {{retweet.created_at | date:'medium'}}
+</div>

@@ -1,0 +1,28 @@
+
+<div class="card-deck" >
+  <div class="card" *ngFor="let feed of (feeds ? feeds.slice(0,3): [])">
+
+    <div class="card-block">
+      <h5 class="card-title">{{ feed.title }}</h5>
+      <p class="card-text"><small class="text-muted">Published on {{ feed.pubDate | date:'short' }}</small></p>
+      <hr>
+      <p class="card-text">{{ feed.description | stripHtmlTags | slice: 0:170}}...</p>
+    	<a [href]="feed.link"><small>Read more →</small></a>
+  		</div>
+  </div>
+</div>
+
+<br><br>
+
+<div class="card-deck" >
+  <div class="card" *ngFor="let feed of (feeds ? feeds.slice(3,6): [])">
+
+    <div class="card-block">
+      <h5 class="card-title">{{ feed.title }}</h5>
+      <p class="card-text"><small class="text-muted">Published on {{feed.pubDate | date:'short' }}</small></p>
+      <hr>
+      <p class="card-text">{{ feed.description | stripHtmlTags | slice: 0:170}}...</p>
+    	<a [href]="feed.link"><small>Read more →</small></a>
+  		</div>
+  </div>
+</div>

@@ -16,8 +16,8 @@ export class TwitterService {
     return this.http.get<TwitterResponse>('/twitter/api/user');
   }
 
-  home(since?: string) {
-    return this.http.get<TwitterResponse>('/twitter/api/home?since=${since}');
+  home() {
+    return this.http.get<TwitterResponse>('/twitter/api/home');
   }
 
   action(property: 'favorite'|'retweet', id: string, state: boolean) {

@@ -20,10 +20,10 @@ import { ViewPlaceComponent } from './components/view-place/view-place.component
 import { ExplorePlacesComponent } from './components/explore-places/explore-places.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', component: DashboardComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
+  {path: 'dashboard', component: DashboardComponent},
   {path: 'explore', component: ExploreComponent},
   {path: 'organisations', component: ExploreOrgComponent},
   {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard]},
@@ -36,7 +36,7 @@ const routes: Routes = [
   {path: 'places', component: ExplorePlacesComponent},
   {path: 'place/:id', component: ViewPlaceComponent},
   {path: 'user/:id', component: ViewUserComponent},
- // {path: '**', redirectTo: ''},
+  {path: '**', redirectTo: 'DashboardComponent'},
 ];
 
 @NgModule({

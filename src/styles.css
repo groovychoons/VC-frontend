@@ -14,3 +14,12 @@ h3 { font-family: Open Sans !important; }
 h4 { font-family: Open Sans !important; }
 h5 { font-family: Open Sans !important; }
 h6 { font-family: Open Sans !important; }
+
+body {
+	height: 100vh;
+}
+
+app-root {
+  display: block;
+  height: 100vh;
+}

@@ -4,3 +4,12 @@
 	bottom: 0px;
 	padding: 15px 100px 0px 100px;
 }
+
+p {
+	padding: 0px;
+}
+
+/* footer is currently 168 + 15 */
+.content {
+  min-height: calc(100vh - 312px);
+}

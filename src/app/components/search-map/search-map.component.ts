@@ -33,7 +33,7 @@ export class SearchMapComponent implements OnInit {
 
   ngOnInit() {
 
-    this.requestService.viewRequests().subscribe(result => {
+    this.requestService.viewAllRequests().subscribe(result => {
       this.requests = result;
     },
     err => {

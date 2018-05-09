@@ -95,7 +95,7 @@ export class RequestComponent implements OnInit {
     this.requestService.addRequest(request).subscribe(data => {
       if(data.success){
         this.flashMessage.show('Your request has been submitted for approval.', {cssClass: 'alert-success', timeout: 3000});
-        this.router.navigate(['/explore']);
+        this.router.navigate(['/requests']);
       } else {
         this.flashMessage.show('Something went wrong', {cssClass: 'alert-danger', timeout: 3000});
       }

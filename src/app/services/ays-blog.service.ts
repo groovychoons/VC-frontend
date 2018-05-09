@@ -6,7 +6,7 @@ import { Feed } from '../models/feed';
 @Injectable()
 export class AysBlogService {
 
-  private rssToJsonServiceBaseUrl: string = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40areyousyrious'
+  private rssToJsonServiceBaseUrl: string = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40AreYouSyrious'
 
   constructor(
     private http: Http

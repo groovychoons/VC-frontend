@@ -1,6 +1,6 @@
 
 <div class="card-columns">
-  <div class="card" *ngFor="let card of requests" [routerLink]="['/request', card.id]" style="width: 15rem;">
+  <div class="card" *ngFor="let card of (requests ? requests.slice(0,2): [])" [routerLink]="['/request', card.id]" style="width: 15rem;">
     <img class="card-img-top img-fluid" src="../assets/icons/027-info.png" alt="Card image cap">
     
     <div class="card-block">

@@ -1,6 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { Http, Headers, Response } from '@angular/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Observable, BehaviorSubject } from 'rxjs';
 import 'rxjs/add/operator/map';
+
+import { Request } from '../models/request';
+import { ApiResponse } from '../models/ApiResponse';
+
 
 @Injectable()
 export class RequestService {
@@ -10,7 +16,10 @@ export class RequestService {
   user: any;
   _id: string;
 
-  constructor(private http:Http) { }
+  constructor(
+    private http:Http,
+    private httpClient:HttpClient
+  ) { }
 
   addRequest(request){
     let headers = new Headers();
@@ -43,11 +52,25 @@ export class RequestService {
       .map(res => res.json());
   }
 
-   viewRequests(){
+   viewAllRequests(){
     let headers = new Headers();
-    headers.append('Content-Type','application/json');
-    return this.http.get('/requests/get', {headers: headers})
+    headers.append('Content-Type','application/json')
+    return this.http.get('/requests', {headers: headers})
       .map(res => res.json().data);
+  }
+
+   viewRequests(title: string): Observable<ApiResponse> {
+    let headers = new HttpHeaders();
+    headers = headers.append('Content-Type','application/json')
+
+    let params = new HttpParams();
+    params = params.append('title', title);
+
+
+    return this.httpClient.get('/requests', {headers, params})
+      .map((response: ApiResponse) => {
+        return response.data;
+      });
   }
 
    viewRequestsByUser(){
@@ -64,6 +87,5 @@ export class RequestService {
     return this.http.get(`requests/getbyteam/${teamid}`, {headers: headers})
       .map(res => res.json().data);
   }
-
 
 }

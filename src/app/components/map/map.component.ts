@@ -22,7 +22,7 @@ export class MapComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.requestService.viewRequests().subscribe(result => {
+    this.requestService.viewAllRequests().subscribe(result => {
       this.requests = result;
     },
     err => {

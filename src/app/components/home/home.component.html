@@ -1,7 +1,51 @@
+
+<div class="row">
+
+  <div class="col-lg-7">
+
+    <div id="carouselControls" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-slide-to="0" class="active"></li>
+          <li data-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a [routerLink]="['/about']"><img class="d-block w-100" src="../assets/slider-map-image.jpg" alt="What we do"></a>
+          </div>
+          <div class="carousel-item">
+            <a [routerLink]="['/getverified']"><img class="d-block" src="../assets/slider-get-verified.jpg" alt="Get verfied"></a>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+  </div>
+
+  <div class="col-lg-5">
+
+    <h3>Featured Requests</h3>
+    <br>
+     <app-card-latest-requests></app-card-latest-requests>
+     <br>
+  <a [routerLink]="['/explore']">View more requests →</a>
+
+  </div>
+
+</div>
+
+<hr>
+
 <div class="container">
   <div class="row">
     <div class="col-sm">
-    <a [routerLink]="['/requests']"><img class="explore-options" src="../assets/dashboard-requests.jpg" alt="Latest Requests"></a>
+    <a [routerLink]="['/explore']"><img class="explore-options" src="../assets/dashboard-requests.jpg" alt="Latest Requests"></a>
     </div>
     <div class="col-sm">
     <a [routerLink]="['/places']"><img class="explore-options" src="../assets/dashboard-places.jpg" alt="Explore Places"></a>
@@ -13,33 +57,17 @@
 </div>
 
 <hr>
-<!--
-  <app-slider *ngIf="!authService.loggedIn()"></app-slider>
 
-<div class="jumbotron text-center">
-  <h1>VolunteerConnect</h1>
-  <p class="lead">Welcome to my site!</p>
-  <div>
-    <a class="btn btn-primary" [routerLink]="['/register']">Register</a>
-    <a class="btn btn-default" [routerLink]="['/login']">Login</a>
-  </div>
+<div class="container quote">
+  <h3>"There are many borders to dismantle, but the most important are the ones within our own hearts and minds – these are the borders that are dividing humanity from itself."</h3>
+  <a class="text-muted" href="https://www.theguardian.com/commentisfree/2018/feb/02/refugee-crisis-human-flow-ai-weiwei-china">- Read artist and activist Ai Weiwei's recent article on refugees</a>
 </div>
--->
-<div class="row">
-  <div class="col-md-4">
-    <h3>Post Requests</h3>
-    <p>Let others know what you need and where you need it by posting a request for goods or services</p>
-  </div>
-  <div class="col-md-4">
-    <h3>News</h3>
-    <p>We'll bring you the latest stories, blog posts and updates related to the refugee crisis</p>
-  </div>
-  <div class="col-md-4">
-    <h3>Places and People</h3>
-    <p>Search our site for profiles on organisations or places to help you get a better picture</p>
-  </div>
-</div>
+<hr>
+  
+  <br>
+  <h3>Latest News from Are You Syrious</h3>
+  <p>Daily news digests from the field, mainly for volunteers and refugees on the route, but also for journalists and other parties.</p>
+  <br>
+  <app-card-news></app-card-news>
 
-<h2>About us</h2>
-etc.
-<router-outlet></router-outlet>
+<br>

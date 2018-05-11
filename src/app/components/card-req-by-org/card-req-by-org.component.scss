@@ -1,0 +1,16 @@
+@media (min-width: 576px) {
+    .card-columns {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 608px) {
+    .card-columns {
+        column-count: 3;
+    }
+}
+
+.card-columns {
+    margin: 20px !important;
+    float: left;
+}

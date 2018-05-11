@@ -1,68 +1,24 @@
 
-<div class="row">
-
-  <div class="col-lg-7">
-
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-slide-to="0" class="active"></li>
-          <li data-slide-to="1"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="../assets/slider-map-image.jpg" alt="What we do">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block" src="../assets/slider-get-verified.jpg" alt="Get verfied">
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="/" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="/" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-
-  </div>
-
-  <div class="col-lg-5">
-
-    <h3>Latest Requests</h3>
-      Put this section in.
-  </div>
-
-</div>
+<h2 class="page-header">Dashboard</h2>
+<p>Manage your requests and organisations here.</p>
 
 <hr>
 
+<h4 class="page-header">Manage My Requests</h4>
+<p>Click on a request below to update or delete it.</p>
 <div class="container">
-  <div class="row">
-    <div class="col-sm">
-    <a [routerLink]="['/explore']"><img class="explore-options" src="../assets/dashboard-requests.jpg" alt="Latest Requests"></a>
-    </div>
-    <div class="col-sm">
-    <a [routerLink]="['/places']"><img class="explore-options" src="../assets/dashboard-places.jpg" alt="Explore Places"></a>
-    </div>
-    <div class="col-sm">
-    <a [routerLink]="['/organisations']"><img class="explore-options" src="../assets/dashboard-organisations.jpg" alt="Explore Organisations"></a>
-    </div>
-  </div>
+  <app-cardbyuser></app-cardbyuser>
 </div>
 
-<hr>
-
-<div class="container quote">
-  <h3>"There are many borders to dismantle, but the most important are the ones within our own hearts and minds – these are the borders that are dividing humanity from itself."</h3>
-  <a class="text-muted" href="https://www.theguardian.com/commentisfree/2018/feb/02/refugee-crisis-human-flow-ai-weiwei-china">- Read artist and activist Ai Weiwei's recent article on refugees</a>
+<br><br>
+<h4 class="page-header">Manage My Organisations</h4>
+<p>Click on an organisation below to update its details and manage requests posted by the organisation.</p>
+<div class="container">
+<app-card-org-by-user></app-card-org-by-user>
 </div>
-<hr>
-  
-  <br>
-  <h3>Latest News from Are You Syrious</h3>
-  <br>
-  <app-card-news></app-card-news>
 
+<br><br>
+<h4>Get verified!</h4>
+<p>Boost your profile or your organisation's profile by becoming a verified member.</p>
+<a [routerLink]="['/getverified']">Find out more →</a>
 <br>

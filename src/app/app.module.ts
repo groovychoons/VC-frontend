@@ -51,6 +51,16 @@ import { TweetComponent } from './components/tweet/tweet.component';
 import { TweetPipe } from './pipes/tweet.pipe';
 import { StripHtmlTagsPipe } from './pipes/strip-html-tags.pipe';
 import { CardNewsComponent } from './components/card-news/card-news.component';
+import { CardLatestRequestsComponent } from './components/card-latest-requests/card-latest-requests.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { CardOrgByUserComponent } from './components/card-org-by-user/card-org-by-user.component';
+import { ViewOrgAsOwnerComponent } from './components/view-org-as-owner/view-org-as-owner.component';
+import { CardReqByOrgComponent } from './components/card-req-by-org/card-req-by-org.component';
+import { MapPlaceComponent } from './components/map-place/map-place.component';
+import { MapOrgComponent } from './components/map-org/map-org.component';
+import { MapPlacesComponent } from './components/map-places/map-places.component';
+import { VerificationComponent } from './components/verification/verification.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +94,17 @@ import { CardNewsComponent } from './components/card-news/card-news.component';
     TweetComponent,
     TweetPipe,
     StripHtmlTagsPipe,
-    CardNewsComponent
+    CardNewsComponent,
+    CardLatestRequestsComponent,
+    AboutComponent,
+    ContactComponent,
+    CardOrgByUserComponent,
+    ViewOrgAsOwnerComponent,
+    CardReqByOrgComponent,
+    MapPlaceComponent,
+    MapOrgComponent,
+    MapPlacesComponent,
+    VerificationComponent
     
   ],
   imports: [

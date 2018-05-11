@@ -30,6 +30,13 @@ export class RequestService {
       .map(res => res.json());
   }
 
+   editRequest(id, request){
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.patch(`requests/update/${id}`, request, {headers: headers})
+      .map(res => res.json());
+  }
+
   deleteRequest(id){
     let headers = new Headers();
     this.loadToken();

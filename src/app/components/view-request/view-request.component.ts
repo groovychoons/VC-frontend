@@ -54,4 +54,10 @@ export class ViewRequestComponent implements OnInit {
   }
 
 
+  onConfirm() {
+    this.flashMessage.show('Your details have been sent.', {cssClass: 'alert-success', timeout: 4000});
+
+  }
+
+
 }

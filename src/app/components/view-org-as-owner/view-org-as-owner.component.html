@@ -1,0 +1,38 @@
+
+<a [routerLink]="['/dashboard']">← Dashboard</a>
+
+<hr>
+
+
+<button class="btn btn-secondary viewButton" [ngClass]="pageMode" (click)="editRequest()">Edit</button>
+<button class="btn btn-secondary editButton" [ngClass]="pageMode" (click)="cancelEdit()">Cancel</button>
+
+
+<br><br>
+
+<div class="container">
+  
+    <form id="requestForm" name="requestForm"  method="post" novalidate (ngSubmit)="saveRequest()" #requestForm="ngForm">
+      	<h2>
+          <input type="text" class="form-control" id="name" name="name"  [ngClass]="pageMode" [(ngModel)]="request.name" required #title="ngModel"/>
+          <span class="displayValue" [ngClass]="pageMode">{{ request.name }}</span>
+      	</h2>
+    	<p>
+            <textarea type="text" class="form-control" id="description" name="description"  [ngClass]="pageMode" [(ngModel)]="request.description" required #title="ngModel"></textarea>
+            <span class="displayValue" [ngClass]="pageMode">{{ request.description }}</span>
+        </p>
+    <br>
+
+
+        <button type="submit" class="btn btn-primary editButton" [ngClass]="pageMode" form="requestForm"  [disabled]="requestForm.invalid">Save</button>
+
+  </form> 
+  
+</div>
+
+<hr>
+<h3 class="page-header">Manage Requests By {{request.name}}</h3>
+<p>Click on a request below to update or delete it.</p>
+<app-card-req-by-org [id]="id"></app-card-req-by-org>
+
+<router-outlet></router-outlet>

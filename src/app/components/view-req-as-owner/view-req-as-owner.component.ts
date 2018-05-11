@@ -53,7 +53,7 @@ export class ViewReqAsOwnerComponent implements OnInit {
     this.requestService.deleteRequest(this.id).subscribe(data => {
       if(data.success){
         this.flashMessage.show('Your request has been deleted', {cssClass: 'alert-success', timeout: 4000});
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/profile']);
       } else {
         this.flashMessage.show('Something went wrong', {cssClass: 'alert-danger', timeout: 3000});
       }
@@ -69,6 +69,14 @@ export class ViewReqAsOwnerComponent implements OnInit {
   saveRequest() : void {
     this.requestPrior = new Object();
     this.pageMode = "viewMode";
+
+    this.requestService.editRequest(this.id, this.request).subscribe(data => {
+      if(data.success){
+        this.flashMessage.show('Your request has been updated', {cssClass: 'alert-success', timeout: 4000});
+      } else {
+        this.flashMessage.show('Something went wrong', {cssClass: 'alert-danger', timeout: 3000});
+      }
+    });
   }
   
   cancelEdit() : void {
@@ -76,7 +84,11 @@ export class ViewReqAsOwnerComponent implements OnInit {
         this.requestPrior = new Object();
 
     this.pageMode = "viewMode";
-    
+  }
+
+  onSubmit() {
+
+
   }
 
 }

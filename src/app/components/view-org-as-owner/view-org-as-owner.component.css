@@ -1,0 +1,51 @@
+
+form input.viewMode {
+  display: none;
+}
+
+form input.editMode {
+  display:auto;
+}
+
+form textarea.viewMode {
+  display: none;
+}
+
+form textarea.editMode {
+  display:auto;
+}
+
+form select.viewMode {
+  display:none;
+}
+
+form select.editMode {
+  display:auto;
+}
+
+form .displayValue.viewMode{
+  display:auto;
+}
+
+form .displayValue.editMode {
+  display:none;
+}
+
+
+.viewButton.viewMode {
+  display:auto;
+
+}
+
+.viewButton.editMode {
+  display:none;
+
+}
+
+.editButton.viewMode {
+  display:none;
+}
+
+.editButton.editMode {
+  display:auto;
+}

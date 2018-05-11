@@ -1,0 +1,15 @@
+
+<div class="card-columns">
+  <div class="card" *ngFor="let card of orgs" [routerLink]="['/organisation/admin', card.id]">
+    <div class="card-block">
+      <h4 class="card-title">{{ card.name }}</h4>
+      <p class="card-text">{{ card.description | slice:0:75 }}...</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Location: {{ card.base_location | slice:0:50 }}..</small>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+

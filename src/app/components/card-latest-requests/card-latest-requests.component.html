@@ -1,0 +1,13 @@
+
+<div class="list-group" >
+
+  <div *ngFor="let card of (requests ? requests.slice(0,4): [])" [routerLink]="['/request', card.id]" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{ card.title }}</h5>
+      <small class="text-muted">3 days ago</small>
+    </div>
+    <p class="mb-1">{{ card.description | slice:0:50 }}...</p>
+    <small class="text-muted">Location: {{ card.location | slice:0:30 }}..</small>
+  </div>
+</div>
+

@@ -5,18 +5,11 @@
   <h4>Your Details</h4>
   	<p>Name: {{ user.f_name }} {{ user.l_name }}</p>
     <p>Email: {{ user.email }}</p>
-	<br>
-  <a [routerLink]="['/organisation/add']">Create an organisation</a>
 </div>
 
 <br>
 <hr>
 <br>
-
-<h4 class="page-header">My Requests</h4>
-<div class="container">
-	<app-cardbyuser></app-cardbyuser>
-</div>
 
 
 <h4 class="page-header">Delete Your Account</h4>

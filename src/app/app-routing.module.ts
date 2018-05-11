@@ -18,9 +18,12 @@ import { ViewReqAsOwnerComponent } from './components/view-req-as-owner/view-req
 import { CreatePlaceComponent } from './components/create-place/create-place.component';
 import { ViewPlaceComponent } from './components/view-place/view-place.component';
 import { ExplorePlacesComponent } from './components/explore-places/explore-places.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { ViewOrgAsOwnerComponent } from './components/view-org-as-owner/view-org-as-owner.component';
+import { VerificationComponent } from './components/verification/verification.component';
 
 const routes: Routes = [
-  {path: '', component: DashboardComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent},
@@ -36,7 +39,13 @@ const routes: Routes = [
   {path: 'places', component: ExplorePlacesComponent},
   {path: 'place/:id', component: ViewPlaceComponent},
   {path: 'user/:id', component: ViewUserComponent},
-  {path: '**', redirectTo: 'DashboardComponent'},
+  {path: '', component: HomeComponent},
+  {path: '**', redirectTo: 'HomeComponent'},
+  {path: 'about', component: AboutComponent},
+  {path: 'contact', component: ContactComponent},
+  {path: 'organisation/admin/:id', component: ViewOrgAsOwnerComponent, canActivate:[AuthGuard]},
+  {path: 'getverified', component: VerificationComponent},
+
 ];
 
 @NgModule({

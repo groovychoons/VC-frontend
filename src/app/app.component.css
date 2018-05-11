@@ -2,14 +2,14 @@
 .footer {
 	background-color: #f7f7f7;
 	bottom: 0px;
-	padding: 15px 100px 0px 100px;
+	padding: 15px 100px 5px 100px;
 }
 
 p {
 	padding: 0px;
 }
 
-/* footer is currently 168 + 15 */
+/* footer is currently 168 + 15 (+129)*/
 .content {
-  min-height: calc(100vh - 312px);
+  min-height: calc(100vh - 189px);
 }

@@ -1,0 +1,16 @@
+
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+  	<agm-marker *ngFor="let card of requests" [latitude]="card.latitude" [longitude]="card.longitude">
+  		<agm-info-window>
+
+  <div class="card"[routerLink]="['/place', card.id]">
+    
+    <div class="card-block">
+      <h4 class="card-title">{{ card.name }}</h4>
+      <p>{{ card.description }}</p>
+    </div>
+
+  </div>
+  	</agm-info-window>
+  	</agm-marker>
+</agm-map>

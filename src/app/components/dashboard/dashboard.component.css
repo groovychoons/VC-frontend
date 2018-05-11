@@ -1,9 +1,4 @@
 
-.carousel img {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
 
 .explore-options {
 	width: 100%;
@@ -12,14 +7,4 @@
 hr {
 	margin-top: 22px;
 	margin-bottom: 22px;
-}
-
-.quote {
-	text-align: center;
-	padding: 20px 90px;
-}
-
-.quote h3 {
-	font-style: italic;
-	font-family: Raleway !important;
 }
